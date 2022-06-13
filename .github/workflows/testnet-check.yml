@@ -24,6 +24,7 @@ jobs:
       - name: check address balances
         run: |
           docker container ls -a
+          sudo netstat -tulpn | grep LISTEN
           bash homework/check-balances.sh
       - name: check chain id
         run: bash homework/check-chain-id.sh
